@@ -18,7 +18,7 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 
 ## 🛠 Technologien
 
-- [.NET 8](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [.NET 8](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Avalonia UI](https://avaloniaui.net/)
 - Open-Source-Bibliotheken für Dokumenten- & Bildverarbeitung
 
