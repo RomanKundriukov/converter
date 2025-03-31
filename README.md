@@ -1,6 +1,6 @@
 # 📚 Cross-Platform Dateikonverter
 
-Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mit **Avalonia UI (.NET 8)**, die verschiedene Dateiformate umwandelt, einschließlich:
+Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mit **Avalonia UI (.NET 9)**, die verschiedene Dateiformate umwandelt, einschließlich:
 
 - **DOCX ↔ PDF**
 - **EPUB ↔ PDF**
@@ -18,7 +18,7 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 
 ## 🛠 Technologien
 
-- [.NET 8](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Avalonia UI](https://avaloniaui.net/)
 - Open-Source-Bibliotheken für Dokumenten- & Bildverarbeitung
 
@@ -40,7 +40,7 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 
 ### Voraussetzungen
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 
 ### Installation
 
