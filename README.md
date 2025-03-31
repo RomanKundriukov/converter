@@ -45,7 +45,7 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 ### Installation
 
 ```bash
-git clone <dein-repo-url>
+git clone https://github.com/RomanKundriukov/converter.git
 cd <projektverzeichnis>
 dotnet restore
 dotnet run
