@@ -53,11 +53,6 @@ dotnet run
 
 ---
 
-## 📸 Screenshots
-
-*(Hier kannst du Screenshots deiner Anwendung hinzufügen.)*
-
----
 
 ## 🤝 Beitrag leisten
 
