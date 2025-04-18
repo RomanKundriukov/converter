@@ -3,11 +3,12 @@
         xmlns:vm="using:converter.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
         x:Class="converter.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="converter">
+	
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +16,115 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Grid Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
 
+		<StackPanel Grid.Row="0"
+					Margin="2">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<!--<TextBlock Text="From"
+						    Grid.Column="0"
+							Grid.Row="0"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"/>
+				
+				<ComboBox Name="BoxFrom" 
+					      Grid.Row="0"
+						  Grid.Column="1"
+						  Width="200"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Center"
+						  SelectedItem="{Binding SelectedFormatFrom}"
+						  ItemsSource="{Binding Formats}">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding .}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+
+				</ComboBox>-->
+				
+			</Grid>
+		</StackPanel>
+
+		<StackPanel Grid.Row="1"
+					Margin="2">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Text="To"
+						    Grid.Column="0"
+							Grid.Row="0"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"/>
+
+				<ComboBox Name="BoxTo"
+						  Grid.Row="0"  
+						  Grid.Column="1"
+						  Width="200"
+						  HorizontalAlignment="Right"
+						  VerticalAlignment="Center"
+						  SelectedItem="{Binding SelectedFormatTo}"
+						  ItemsSource="{Binding Formats}">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding .}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+
+				</ComboBox>
+
+			</Grid>
+		</StackPanel>
+
+		<Border Name="DropBorder"
+				Grid.Row="2"
+				Margin="2"
+				Width="280"
+				BorderBrush="Gray"
+				BorderThickness="1"
+				Background="Transparent"
+				DragDrop.AllowDrop="True"
+				DragDrop.Drop="Border_Drop">
+			
+			<TextBlock Text="{Binding IsFileDropped}"
+					   Name="IsFileDropped"
+					   Margin="2"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   FontSize="20"
+					   Foreground="Gray"
+					   TextWrapping="Wrap"/>
+			
+		</Border>
+
+		<StackPanel Grid.Row="3"
+					Margin="2">
+			<Button HorizontalAlignment="Center"
+					Command="{Binding SaveFile}">Konvert</Button>
+		
+		</StackPanel>
+
+	</Grid>
+    
 </Window>

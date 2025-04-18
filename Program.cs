@@ -20,5 +20,7 @@ namespace converter
                 .WithInterFont()
                 .LogToTrace()
                 .UseReactiveUI();
+
+       
     }
 }
