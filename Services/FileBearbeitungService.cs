@@ -76,6 +76,26 @@ namespace converter.Services
                 XlsxToDocx(filePath);
                 return ergebnis;
             }
+            else if (extension == ".epub" && formatTo == "Pdf")
+            {
+                EpubToPdf(filePath);
+                return ergebnis;
+            }
+            else if(extension == ".epub" && formatTo == "Docx")
+            {
+                EpubToDocx(filePath);
+                return ergebnis;
+            }
+            else if (extension == ".docx" && formatTo == "Epub")
+            {
+                DocxToEpub(filePath);
+                return ergebnis;
+            }
+            else if (extension == ".pdf" && formatTo == "Epub")
+            {
+                PdfToEpub(filePath);
+                return ergebnis;
+            }
             else
             {
                 ergebnis = "Dateiformat nicht unterstützt!";
@@ -85,10 +105,82 @@ namespace converter.Services
         }
 
         /// <summary>
+        /// Konvertiert DOCX in EPUB
+        /// </summary>
+        /// <param name="filePath"></param>
+        public void DocxToEpub(string filePath)
+        {
+            // 1. DOCX laden
+            var doc = new Aspose.Words.Document(filePath);
+
+            // 2. Ausgabe‑Pfad mit .epub‑Endung ermitteln
+            var outputFilePath = GetNewFilePath(filePath, ".epub");
+
+            // 3. Als EPUB speichern
+            doc.Save(outputFilePath, Aspose.Words.SaveFormat.Epub);
+        }
+
+        /// <summary>
+        /// Konvertiert PDF in EPUB
+        /// </summary>
+        /// <param name="filePath"></param>
+        public void PdfToEpub(string filePath)
+        {
+            // PDF laden
+            using var pdfDocument = new Aspose.Pdf.Document(filePath);
+
+            // EPUB‑Optionen anlegen und auf Flow setzen
+            var epubOptions = new EpubSaveOptions
+            {
+                ContentRecognitionMode = EpubSaveOptions.RecognitionMode.Flow
+            };
+
+            // Ziel‑Pfad (*.epub) ermitteln
+            var outputFilePath = GetNewFilePath(filePath, ".epub");
+
+            // Mit den Optionen als EPUB speichern
+            pdfDocument.Save(outputFilePath, epubOptions);
+        }
+
+        /// <summary>
+        /// Konvertiert EPUB in DOCX
+        /// </summary>
+        /// <param name="filePath"></param>
+        public void EpubToDocx(string filePath)
+        {
+            // 1. EPUB‐Ladeoptionen anlegen
+            var epubOptions = new EpubLoadOptions();
+
+            // 2. EPUB in ein Aspose.PDF‐Document laden
+            using var pdfDocument = new Aspose.Pdf.Document(filePath, epubOptions);
+
+            // 3. Zielpfad (.docx) ermitteln
+            var outputFilePath = GetNewFilePath(filePath, ".docx");
+
+            // 4. Als DOCX speichern
+            pdfDocument.Save(outputFilePath, SaveFormat.DocX);
+        }
+
+        /// <summary>
+        /// Konvertiert EPUB in PDF
+        /// </summary>
+        /// <param name="filePath"></param>
+        public void EpubToPdf(string filePath)
+        {
+            var epubOptions = new Aspose.Pdf.EpubLoadOptions();
+
+            using Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(filePath, epubOptions);
+
+            string outputFilePath = GetNewFilePath(filePath: filePath, fileFormat: ".pdf");
+
+            pdfDocument.Save(outputFilePath, Aspose.Pdf.SaveFormat.Pdf);
+        }
+
+        /// <summary>
         /// Konvertiert DOCX in PDF
         /// </summary>
         /// <param name="filePath"></param>
-        /// <exception cref="NotImplementedException"></exception>
+
         public void DocxToPdf(string filePath)
         {
             Aspose.Words.Document docxDocument = new Aspose.Words.Document(filePath);
@@ -104,7 +196,6 @@ namespace converter.Services
         /// Konvertiert PDF in DOCX
         /// </summary>
         /// <param name="filePath"></param>
-        /// <exception cref="NotImplementedException"></exception>
         public void PdfToDocx(string filePath)
         {
             Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(filePath);

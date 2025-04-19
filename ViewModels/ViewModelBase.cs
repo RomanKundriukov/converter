@@ -14,7 +14,8 @@ namespace converter.ViewModels
         {
             Pdf = 1,
             Docx = 2,
-            Xlsx = 3
+            Xlsx = 3,
+            Epub = 4,
         }
     }
 }
