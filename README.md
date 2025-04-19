@@ -3,8 +3,9 @@
 Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mit **Avalonia UI (.NET 9)**, die verschiedene Dateiformate umwandelt, einschließlich:
 
 - **DOCX ↔ PDF**
-- **EPUB ↔ PDF**
-- **Bilder → PDF**
+- **PDF ↔ DOCX**
+- **XLSX ↔ PDF**
+- **XLSX → DOCX**
 
 ---
 
