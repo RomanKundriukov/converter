@@ -4,6 +4,10 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 
 - **DOCX ↔ PDF**
 - **PDF ↔ DOCX**
+- **EPUB ↔ DOCX**
+- **EPUB ↔ PDF**
+- **PDF ↔ EPUB**
+- **DOCX ↔ EPUB**
 - **XLSX ↔ PDF**
 - **XLSX → DOCX**
 
@@ -32,7 +36,10 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 | DOCX          | PDF           |
 | PDF           | DOCX          |
 | XLSX          | PDF           |
-| XLSX          | DOCX          |
+| EPUB          | DOCX          |
+| EPUB          | PDF           |
+| DOCX          | EPUB          |
+| PDF           | EPUB          |
 
 ---
 
