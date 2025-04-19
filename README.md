@@ -31,9 +31,8 @@ Dieses Projekt ist eine plattformübergreifende Desktop-Anwendung, entwickelt mi
 |---------------|---------------|
 | DOCX          | PDF           |
 | PDF           | DOCX          |
-| EPUB          | PDF           |
-| PDF           | EPUB          |
-| Bilder (JPG, PNG, BMP) | PDF           |
+| XLSX          | PDF           |
+| XLSX          | DOCX          |
 
 ---
 
